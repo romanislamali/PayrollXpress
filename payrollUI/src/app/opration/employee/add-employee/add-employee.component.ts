@@ -55,7 +55,7 @@ export class AddEmployeeComponent {
     this.e = Object.assign(this.accArr, this.fkArr);
     this.submitted = true;
     this.employeeService.addEmployee(this.e).subscribe(
-      data => alert('Employee added successfull!!'),
+      data => alert('Employee added successful!!'),
       error => alert('Something is wrong, please try again!!')
     );
     this.ngOnInit();
