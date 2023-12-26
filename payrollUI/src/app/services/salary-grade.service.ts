@@ -13,26 +13,26 @@ export class SalaryGradeService {
   constructor(private httpClient: HttpClient) { }
 
   addSalaryGrade(salaryGrade: SalaryGrade): Observable<ApiResponse> {
-    return this.httpClient.post<ApiResponse>(this.baseUrl + "/salarygrade/add", salaryGrade);
+    return this.httpClient.post<ApiResponse>(this.baseUrl + "/salary_grade/add", salaryGrade);
   }
 
   getAllSalaryGrade(): Observable<SalaryGrade> {
-    return this.httpClient.get<SalaryGrade>(this.baseUrl+"/salarygrade/all");
+    return this.httpClient.get<SalaryGrade>(this.baseUrl+"/salary_grade/all");
   }
 
   deleteSalaryGradeById(id: number): Observable<ApiResponse> {
-    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/salarygrade/delete/"+id);
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/salary_grade/delete/"+id);
   }
 
   updateSalaryGrade(id: number, salaryGrade: SalaryGrade): Observable<ApiResponse> {
-    return this.httpClient.put<ApiResponse>(this.baseUrl+"/salarygrade/update/"+salaryGrade.id , salaryGrade);
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"/salary_grade/update/"+salaryGrade.id , salaryGrade);
   }
 
   getSalaryGradeById(id: number): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl+"/salarygrade/"+id);
+    return this.httpClient.get<any>(this.baseUrl+"/salary_grade/"+id);
   }
 
   getSalaryLength(): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl+"/salarygrade/check");
+    return this.httpClient.get<any>(this.baseUrl+"/salary_grade/check");
   }
 }
