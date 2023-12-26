@@ -14,22 +14,22 @@ export class BankAccountService {
   constructor(private httpClient: HttpClient) { }
 
   addBankAccount(bankAccount: BankAccount): Observable<ApiResponse> {
-    return this.httpClient.post<ApiResponse>(this.baseUrl + "/bankAccount/add", bankAccount);
+    return this.httpClient.post<ApiResponse>(this.baseUrl + "/bank_account/add", bankAccount);
   }
 
   getAllBankAccount(): Observable<BankAccount> {
-    return this.httpClient.get<BankAccount>(this.baseUrl+"/bankAccount/all");
+    return this.httpClient.get<BankAccount>(this.baseUrl+"/bank_account/all");
   }
 
   deleteBankAccountById(id: number): Observable<ApiResponse> {
-    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/bankAccount/delete/"+id);
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/bank_account/delete/"+id);
   }
 
   updateBankAccount(id: number, bankAccount: BankAccount): Observable<ApiResponse> {
-    return this.httpClient.put<ApiResponse>(this.baseUrl+"/bankAccount/update/"+id, bankAccount);
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"/bank_account/update/"+id, bankAccount);
   }
 
   getBankAccountById(id: number): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl+"/bankAccount/"+id);
+    return this.httpClient.get<any>(this.baseUrl+"/bank_account/"+id);
   }
 }
