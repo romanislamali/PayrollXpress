@@ -13,22 +13,22 @@ export class AccountTypeService {
   constructor(private httpClient: HttpClient) { }
 
   addAccountType(accountType: AccountType): Observable<ApiResponse> {
-    return this.httpClient.post<ApiResponse>(this.baseUrl + "/accountType/add", accountType);
+    return this.httpClient.post<ApiResponse>(this.baseUrl + "/account_type/add", accountType);
   }
 
   getAllAccountType(): Observable<AccountType> {
-    return this.httpClient.get<AccountType>(this.baseUrl+"/accountType/all");
+    return this.httpClient.get<AccountType>(this.baseUrl+"/account_type/all");
   }
- 
+
   deleteAccountTypeById(id: number): Observable<ApiResponse> {
-    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/accountType/delete/"+id);
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/account_type/delete/"+id);
   }
 
   updateAccountType(id: number, accountType: AccountType): Observable<ApiResponse> {
-    return this.httpClient.put<ApiResponse>(this.baseUrl+"/accountType/update/"+accountType.id , accountType);
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"/account_type/update/"+accountType.id , accountType);
   }
 
   getAccountTypeById(id: number): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl+"/accountType/"+id);
+    return this.httpClient.get<any>(this.baseUrl+"/account_type/"+id);
   }
 }
