@@ -1,4 +1,4 @@
-export class AccountType{
+export class User{
   userName: string | undefined;
   password: string | undefined;
 }
